@@ -5,9 +5,10 @@
   "description": "A virtual ecommerce website using Node js, Express js, and Mongoose.",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "build": "rimraf build && mkdir build && copyfiles -u 1 src/**/* build"
   },
-  "author": "QUANGNH",
+  "author": "quangnh",
   "license": "MIT",
   "dependencies": {
     "admin-bro": "^2.9.0",
