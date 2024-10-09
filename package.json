@@ -7,7 +7,7 @@
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
-  "author": "Maryam Aljanabi",
+  "author": "QUANGNH",
   "license": "MIT",
   "dependencies": {
     "admin-bro": "^2.9.0",
