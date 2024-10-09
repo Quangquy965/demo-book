@@ -1,0 +1,27 @@
+version: "3.4"
+
+services:
+  app:
+    image: e-comic:01
+    volumes:
+      - ./public/images:/app/public/images
+    environment: 
+      - SESSION_SECRET=${SESSION_SECRET}
+      - STRIPE_PRIVATE_KEY=${STRIPE_PRIVATE_KEY}
+      - GMAIL_EMAIL=${GMAIL_EMAIL}
+      - ADMIN_EMAIL=${ADMIN_EMAIL}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - ADMIN_COOKIE_NAME=${ADMIN_COOKIE_NAME}
+      - ADMIN_COOKIE_PASSWORD=${ADMIN_COOKIE_PASSWORD}
+      - DB_MONGO_HOST=mongo # Sử dụng tên service 'mongo' để kết nối
+      - DB_MONGO_PORT=27017
+    ports:
+      - "${PORT}:${PORT}"
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    container_name: mongo_container
+    ports:
+      - "27017:27017"
