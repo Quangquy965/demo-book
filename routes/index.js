@@ -39,6 +39,16 @@ router.get("/contact", async (req, res) => {
   }
 });
 
+router.get("/detail", async (req, res) => {
+  try {
+    console.log("đã vào đây")
+    res.render("shop/detail", { pageName: "Detail" });
+  } catch (error) {
+    console.log(error);
+    res.redirect("/");
+  }
+});
+
 // GET: add a product to the shopping cart when "Add to cart" button is pressed
 router.get("/add-to-cart/:id", async (req, res) => {
   const productId = req.params.id;
